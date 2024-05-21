@@ -1,0 +1,193 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+
+}
+
+body{
+    background-image:url("forest.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.slide1{
+
+    width:100%;
+    height:100vh;
+    /* font-family: "Orbitron", sans-serif;
+    font-family: "Sen", sans-serif;
+    font-family: "Iceland", sans-serif;
+    font-family: "Hachi Maru Pop", cursive;
+    font-family: "Comfortaa", sans-serif;
+
+    font-family: "Bungee Hairline", sans-serif;
+    font-family: "Bruno Ace SC", sans-serif;
+    font-family: "Baloo Bhaina 2", sans-serif; */
+    font-family: "Audiowide", sans-serif;
+    font-weight: 700;
+    font-size:110px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    position:relative;
+
+}
+.slide1 > div:not(.bottom){
+    width:100%;
+    height: 100%;
+    position:absolute;
+    left:0;
+    top:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+}
+.slide1 .transparent{
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px) brightness(110%) contrast(130%);
+    mask-image: linear-gradient(
+         to right, black 0 40%, transparent 40%), linear-gradient( to right, black 0 40%, transparent 40%);
+    -webkit-mask-clip: text, padding-box;
+    mask-composite: exclude;
+    color:transparent;
+}
+.slide1 div:not(.transparent, .bottom){
+    mask-image: linear-gradient(to right, transparent 0 40%, black 40%);
+    color: white;
+}
+
+.slide1 div.bottom{
+    font-size: 12px;
+    font-weight:500;
+    letter-spacing: 6px;
+    left: 20%;
+    top: unset;
+    bottom: 15px;
+    transform: translate(-50%,-50%);
+    position:absolute;
+    z-index: 10;
+    color:color-mix(in srgb, black , white 80%);
+    color:white;
+    opacity: 0.4;
+
+
+}
+
+.slide2{
+    background:red;
+    width:100%;
+    height:100vh;
+}
+
+header{
+    width:100%;
+    height:6vh;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 3000;
+    padding: 5px 15px;
+    font-family: "Audiowide", sans-serif;
+    font-size:11px;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing: 2px;
+    color: color-mix(in srgb, white, transparent 40%);
+
+    nav{
+        position:relative;
+        width:100%;
+        height:100%;
+        display:flex;
+        justify-content: flex-end;
+        align-items: center;
+        & > div:first-child{
+            position:absolute;
+            left:0;
+            color:color-mix(in srgb, black , white 60%)
+        }
+
+        .right{
+            display:flex;
+            align-items:center;
+            justify-content: space-between;
+            width: 30%;
+            > div:last-child{
+                width: 30px;
+                height: 30px;
+                background-color: rgba(255,255,255,0.2);
+                position:relative;
+                border-radius: 50%;   
+            }
+        }
+    }
+}
+
+
+.right > div:last-child > div, .right > div:last-child::after, .right >  div:last-child::before {
+    content:"";
+width:50%;
+height:1px;
+background:white;
+position:absolute;
+top:50%;
+left: 50%;
+border-radius:50%;
+transform: translate(-50%,-50%);
+
+}
+
+ .right > div:last-child::before{
+    top:30%;
+    width:30%;
+
+}
+.right > div:last-child::after{
+    width:30%;
+    top: unset;
+    bottom:30%;
+}
+
+body > img{
+    position:absolute;
+    left:-100%;
+    top:0;
+    width: 100%;
+    height:100vh;
+    animation: 40s linear infinite both move-clouds;
+}
+
+
+body > img.fog5{
+    animation-delay: 3s;
+
+}
+body > img.cloud4{
+    animation-delay: -14s;
+
+}
+@keyframes move-clouds {
+    to{
+        transform: translateX(200%);
+    }
+}
+
+
+.shine{
+background-image: linear-gradient(145deg,transparent 30%,  white 30% 35% , transparent 35% 80%, white 80% 85%, transparent 85% 100% );
+border:2px solid green;
+/* background-repeat: no-repeat; */
+background-size: 50% 100%;
+width:50%;
+height:90px;
+animation: 4s linear infinite both shining;
+}
+
+
+@keyframes shining{
+    to{
+        background-position: 100% 100%;
+    }
+}
